@@ -1,37 +1,108 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/DYLO99/SchoolHacks.com/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<!DOCTYPE html>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<html>
 
-### Markdown
+    <head>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+        <meta charset="utf-8">
+<!--
+Created using JS Bin
+http://jsbin.com
 
-```markdown
-Syntax highlighted code block
+Copyright (c) 2021 by Vekdrop (http://jsbin.com/yizohafewo/1/edit)
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+-->
+<meta name="robots" content="noindex">
 
-1. Numbered
-2. List
+    </head>
 
-**Bold** and _Italic_ and `Code` text
+    <body>
 
-[Link](url) and ![Image](src)
-```
+        <h2>Drop Knife or Gloves</h2>
+    
+        <p>
+            <label for="name">Steam name</label>
+            <input id="name" type="text" value="Player">
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+        </p>
 
-### Jekyll Themes
+        <p>
+            <label for="item">Item name</label>
+            <input id="item" type="text" value="Karambit">
+            
+        </p>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DYLO99/SchoolHacks.com/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+        <p>
+            <input id="starred" type="checkbox" value="Player" checked>
+            <label for="starred">Knife or gloves?</label>
+            
+        </p>
 
-### Support or Contact
+        <p>
+            <label for="paintkit">Weapon color</label>
+            <input id="paintkit" type="text" value="Lore">
+            
+        </p>
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+        <p>
+            <input id="stattrak" type="checkbox" value="Player" checked>
+            <label for="stattrak">StatTrack&trade;?</label>
+            
+        </p>
+
+        <p>
+            <label for="rarity">Rarity</label>
+
+            <select id="rarity">
+
+                <option value="0x0F" selected>red</option>
+                <option value="0x0E">pink</option>
+                <option value="0x0C">blue</option>
+
+            </select>
+            
+        </p>
+
+        <input id="dummyinput" style="position:absolute;left:-100%" type="text">
+        <button onclick="copy()">Copy✔</button>
+
+        <script>
+
+            var copy = () =>
+            {
+                let name = document.getElementById("name").value;
+                let item = document.getElementById("item").value;
+                let starred = document.getElementById("starred").checked ? "★" : "";
+                let paintkit = document.getElementById("paintkit").value;
+                let stattrak = document.getElementById("stattrak").checked ? " StatTrak™" : "";
+                let rarity = String.fromCharCode(eval(document.getElementById("rarity").value));
+
+                let input = document.getElementById("dummyinput");
+                input.value = `playerradio Radio.WePlanted "\u2028\x03\x03${name} \x01has opened a container and found: ${rarity}${starred}${stattrak} ${item} | ${paintkit}"`;
+                input.select();
+                input.setSelectionRange(0, input.value.length)
+                document.execCommand("copy");
+            };
+
+        </script>
+
+    <script src="https://static.jsbin.com/js/render/edit.js?4.1.8"></script>
+<script>jsbinShowEdit && jsbinShowEdit({"static":"https://static.jsbin.com","root":"https://jsbin.com"});</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1656750-34', 'auto');
+ga('require', 'linkid', 'linkid.js');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>
